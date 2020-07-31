@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wintern</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header>
+  <div class="inner">
+  <h1 id="logo"><a href="./"><img src="/assets/logo.png" alt="SAMPLE JOB"></a></h1>
+  <div id="contact">
+  <p class="tel">TEL:00-0000-0000<span>受付：00:00〜00:00　定休日：水曜日</span></p>
+  </div>
+  </div>
+  </header>
+  
+  <!--PC用（801px以上端末）メニュー-->
+  <nav id="menubar">
+  <ul class="inner">
+  <li class="current"><a href="./">ホーム</a></li>
+  <li><a href="list_base.html.erb">求人一覧</a>
+      <ul class="ddmenu">
+      <li><飲食店</a></li>
+      <li><a href="./?act=list&kind=2">営業</a></li>
+      <li><a href="./?act=list&kind=3">接客・販売</a></li>
+      <li><a href="./?act=list&kind=4">事務</a></li>
+    </ul>
+  </li>
+  <li><a href="info.html">掲載のご案内</a></li>
+  <li><a href="company.html">会社概要</a></li>
+  <li><a href="link.html">リンク</a></li>
+  <li><a href="./?act=toiawase">お問い合わせ</a></li>
+  </ul>
+  </nav>
+  <!--小さな端末用（800px以下端末）メニュー-->
+  <nav id="menubar-s">
+  <ul>
+  <li><a href="./">ホーム</a></li>
+  <li><a href="jobs.html">求人一覧</a></li>
+  <li><a href="info.html">掲載のご案内</a></li>
+  <li><a href="company.html">会社概要</a></li>
+  <li><a href="link.html">リンク</a></li>
+  <li><a href="./?act=toiawase">お問い合わせ</a></li>
+  </ul>
+  </nav>
+    <%= yield %>
+  </body>
+</html>

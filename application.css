@@ -1,0 +1,137 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /*inner共通
+---------------------------------------------------------------------------*/
+.inner {
+	max-width: 1400px;	/*サイトの最大幅。「#mainimg」のmax-widthと揃える。*/
+	margin: 0 auto;
+	padding: 0 3%;
+}
+
+/*ヘッダー（ロゴが入った最上段のブロック）
+---------------------------------------------------------------------------*/
+/*ヘッダーブロック*/
+header {
+	border-top: 4px solid #af3535;	/*上の線の幅、線種、色*/
+}
+header .inner {
+	height: 100px;	/*高さ*/
+}
+/*ロゴ画像*/
+header #logo img {
+	width: 250px;	/*画像幅*/
+	float: left;	/*左に回り込み*/
+	margin-top: 28px;	/*画像の上に空ける余白。上下のバランスをここで調整して下さい。*/
+}
+
+/*ヘッダー右側の電話番号ブロック
+---------------------------------------------------------------------------*/
+/*ブロック全体*/
+#contact {
+	float: right;		/*右に回り込み*/
+	margin-top: 12px;	/*ブロックの上にあける余白。上下のバランスをここで調整して下さい。*/
+	width: 350px;		/*ブロック幅*/
+	border-radius: 6px;	/*角丸のサイズ*/
+	padding: 5px;		/*ボックス内の余白*/
+	border: 1px solid #dcdcdc;	/*枠線の幅、線種、色*/
+	text-align: center;			/*文字をセンタリング*/
+}
+/*TEL*/
+.tel {
+	letter-spacing: 0.2em;	/*文字間隔を広くする設定。通常がいいならこの行削除。*/
+	font-size: 20px;		/*文字サイズを大きく*/
+}
+/*TELの受付時間の小文字部分*/
+.tel span {
+	display: block;
+	font-size: 11px;		/*文字サイズを小さく*/
+	letter-spacing: 0.1em;	/*文字間隔*/
+}
+
+/*メインメニュー
+---------------------------------------------------------------------------*/
+/*メニューブロック*/
+#menubar {
+	clear: both;
+	overflow: hidden;
+	background: #af3535;	/*背景色*/
+}
+/*メニュー１個あたりの設定*/
+#menubar li {
+	float: left;	/*左に回り込み*/
+	width: 16.6%;	/*メニュー幅（100÷6個=16.6%）　もし４個にするなら100÷4=25%になる。*/
+	padding-top: 5px;	/*この数字と「#menubar li a」のpaddingの１つ目(7px)の数字を足した合計が「#menubar li a」の３つ目の数字(12px)になるようにする。*/
+}
+#menubar li a {
+	display:  block;
+	text-decoration: none;
+	text-align: center;
+	color: #fff;	/*文字色*/
+	padding: 7px 0px 12px;	/*上、左右、下への余白。上の「#menubar li」のpadding-topの解説と合わせて読んで下さい。*/
+}
+/*マウスオン時、現在表示中メニュー*/
+#menubar li a:hover,
+#menubar li.current a {
+	background: #fff;	/*背景色*/
+	color: #af3535;		/*文字色*/
+	border-radius: 8px 8px 0px 0px;	/*角丸のサイズ。左上、右上、右下、左下への順。*/
+}
+/*スマホ用メニューを表示させない*/
+#menubar-s {
+	display: none;
+}
+/*３本バーアイコンを表示させない*/
+#menubar_hdr {
+	display: none;
+}
+
+/*ドロップダウンメニュー用
+---------------------------------------------------------------------------*/
+/*ドロップダウンブロックの設定*/
+#menubar ul.ddmenu {
+	position:absolute;
+	visibility: hidden;
+	z-index: 100;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.15);	/*ボックスの影。右に、下に、広げる幅、0,0,0は黒の事で0.15は透明度15%の事。*/
+	background: #333;	/*背景色（古いブラウザ用）*/
+	background: rgba(0,0,0,0.8);	/*背景色。0,0,0は黒の事で0.8は透明度80%の事。*/
+	width: 25%;	/*幅。お好みで変更してもらってOKです。*/
+	padding: 10px;	/*ボックス内の余白*/
+	border-radius: 8px;	/*角丸のサイズ*/
+	border: 2px solid #fff;	/*枠線の幅、線種、色*/
+}
+
+/*メニュー１個あたりの設定*/
+#menubar ul.ddmenu li {
+	padding-top: 0;
+	width: 50%;	/*幅*/
+	height: 2em;	/*高さ*/
+	overflow: hidden;	/*上の高さを超えた時に非表示にする設定。文字数が増えた時にレイアウトが崩れないための設定ですが、文字を全て表示させたいならこの行と上の行を削除。*/
+}
+#menubar ul.ddmenu li a {
+	background: transparent;	/*背景色をリセットする*/
+	border-radius: 0;
+	text-align: left;	/*文字を左寄せ*/
+	padding: 0 10px;	/*上下、左右への余白*/
+	color: #fff;	/*文字色*/
+}
+/*マウスオン時*/
+#menubar ul.ddmenu li a:hover {
+	border-radius: 0;
+	background: #fff;	/*背景色*/
+	color: #af3535;		/*文字色*/
+}
